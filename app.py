@@ -3,7 +3,7 @@
 from os import getenv
 from random import choice
 from flask import Flask, render_template
-from spotify_api import get_access_token, get_artist_top_tracks
+from spotify_api import get_access_token, get_artist_top_tracks, get_song_query_string
 from genius_api import get_track_data
 
 app = Flask(__name__)
@@ -25,9 +25,8 @@ def index():
 
     track_name = top_track_data['name']
     artist_name = top_track_data['artists'][0]['name']
-
-    genius_query_string = track_name + ' ' + artist_name
-    genius_data = get_track_data(genius_query_string)
+    song_query_string = get_song_query_string(track_name, artist_name)
+    genius_data = get_track_data(song_query_string)
 
     return render_template(
         'index.html',
@@ -35,7 +34,7 @@ def index():
         artist_name=artist_name,
         song_preview_url=top_track_data['preview_url'],
         lyrics_url=genius_data['url'],
-        song_image_url=genius_data['song_art_image_thumbnail_url'],
+        song_image_url=top_track_data['album']['images'][1]['url'],
         artist_image_url=genius_data['primary_artist']['image_url']
     )
 

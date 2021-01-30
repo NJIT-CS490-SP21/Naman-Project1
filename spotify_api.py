@@ -35,3 +35,9 @@ def get_artist_top_tracks(access_token, artist_id):
     data = response.json()
 
     return choice(data['tracks'])
+
+def get_song_query_string(song_name, artist_name):
+    """Returns query string for Genius API search call"""
+
+    cleaned_song_name = song_name.split('(')[0]
+    return cleaned_song_name + ' ' + artist_name

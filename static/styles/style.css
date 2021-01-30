@@ -18,10 +18,11 @@ body {
 
 .link a {
     text-decoration: none;
+    color: #EC407A;
     font-weight: bold;
 }
 
 .link a:hover {
     text-decoration: underline;
-    color: black;
+    color: #880E4F;
 }
