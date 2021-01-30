@@ -1,0 +1,27 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #eddeed;
+}
+
+.content {
+    text-align: center;
+    margin: 4px;
+}
+
+.artist {
+    border-radius: 50%;
+}
+
+.album {
+    border-radius: 4%;
+}
+
+.link a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: black;
+}

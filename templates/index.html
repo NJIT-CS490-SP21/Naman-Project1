@@ -1,0 +1,29 @@
+<!doctype html>
+
+<head>
+    <title>Project 1 Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+
+<h1 class="content">{{song_name}}</h1>
+
+<div class="content">
+    <h2>by {{artist_name}}</h2>
+    <img class="artist" height="70px" width="70px" src={{artist_image_url}} />
+</div>
+
+<div class="content">
+    <img class="album" src={{song_image_url}} />
+</div>
+
+<div class="content">
+    <audio controls src={{song_preview_url}}>
+        Your browser does not support the
+        <code>audio</code> element.
+    </audio>
+</div>
+
+<div class="content link">
+    <a href={{lyrics_url}} target="_blank">Click here to see the lyrics!</a>
+</div>
